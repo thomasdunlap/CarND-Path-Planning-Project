@@ -27,4 +27,18 @@ void GaussianNB::training(std::vector<std::vector<double>> data, std::vector<str
       data_s[i].push_back(observed);
     }
   }
+
+  for (int i=0; i<data.size(); i++) {
+    int class_ = left;
+    if (labels[i] == "right") {
+      class_ = right;
+    } else if (labels[i] == "center") {
+      class_ = center;
+    }
+  }
+
+  data_s[class_][s].push_back(data[i][s]);
+  data_s[class_][d].push_back(fmod(data[i][d], 4.0));
+  data_s[class_][s_dot].push_back(data[i][s_dot]);
+  data_s[class_][d_dot].push_back(data[i][d_dot]);
 }
