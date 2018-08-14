@@ -91,3 +91,8 @@ string GaussianNB::predict(std::vector<double> sample) {
 
   return this->possible_labels[best_index];
 }
+
+double GaussianNB::gaussian(double x, double mu, double sig) {
+  double norm = 1 / sqrt(2*M_PI * pow(sig, 2));
+  return norm * exp(-pow(x - mu, 2) / (2 * pow(sig, 2)));
+}
