@@ -61,3 +61,33 @@ void GaussianNB::training(std::vector<std::vector<double>> data, std::vector<str
   averages_= averages_;
   sigs_ = sigs_;
 }
+
+string GaussianNB::predict(std::vector<double> sample) {
+  std::vector<double> probs;
+
+  for (int i=0; i<3; i++) {
+    double prob = 1;
+
+    for (int j=0; j<4; j++) {
+      if (j == 1) {
+        sample[j] = fmod(sample[j], 4.0);
+      }
+
+      prob *= gaussian(sample[j], averages_[i][j], sigs_[i][j]);
+    }
+
+    probs.push_back(prob);
+  }
+
+  int best_index = 0;
+  double best_prob = probs[best_index];
+
+  for (int i=0; i<3; i++) {
+    if (probs[i] > best_prob) {
+      best_index = i;
+      best_prob = probs[best_index];
+    }
+  }
+
+  return this->possible_labels[best_index];
+}
