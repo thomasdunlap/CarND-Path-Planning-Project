@@ -26,3 +26,13 @@ std::vector<std::vector<double>> read_state(string path) {
 
   return states;
 }
+
+std::vector<string> read_labels(string path){
+  ifstream label_in(path.c_str(), ifstream::in);
+  std::vector<string> labels;
+  string line;
+
+  while(getline(label_in, line)) {
+    
+  }
+}
