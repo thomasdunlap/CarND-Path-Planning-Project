@@ -33,6 +33,11 @@ std::vector<string> read_labels(string path){
   string line;
 
   while(getline(label_in, line)) {
-    
+    istringstream iss(line);
+    string label;
+      iss >> label;
+
+      labels.push_back(label);
   }
+  return labels;
 }
