@@ -12,8 +12,6 @@
 #include "gaussiannb.h"
 #include <algorithm>
 
-
-
 using namespace std;
 
 // for convenience
