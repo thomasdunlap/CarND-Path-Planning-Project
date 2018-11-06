@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 GaussianNB::GaussianNB() {
 
 }
@@ -35,7 +34,6 @@ void GaussianNB::training(std::vector<std::vector<double>> data, std::vector<str
     } else if (labels[i] == "center") {
       class_ = center;
     }
-
 
     data_s[class_][s].push_back(data[i][s]);
     data_s[class_][d].push_back(fmod(data[i][d], 4.0));
