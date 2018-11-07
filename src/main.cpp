@@ -61,7 +61,6 @@ int ClosestWaypoint(double x, double y, const vector<double> &maps_x, const vect
 	}
 
 	return closestWaypoint;
-
 }
 
 int NextWaypoint(double x, double y, double theta, const vector<double> &maps_x, const vector<double> &maps_y)
