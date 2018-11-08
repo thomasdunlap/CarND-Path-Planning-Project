@@ -52,12 +52,12 @@ int ClosestWaypoint(double x, double y, const vector<double> &maps_x, const vect
 		double map_x = maps_x[i];
 		double map_y = maps_y[i];
 		double dist = distance(x,y,map_x,map_y);
-		if(dist < closestLen)
+
+    if(dist < closestLen)
 		{
 			closestLen = dist;
 			closestWaypoint = i;
 		}
-
 	}
 
 	return closestWaypoint;
